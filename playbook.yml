@@ -3,7 +3,6 @@
   remote_user: pi
   sudo: yes
   tasks:
-    - shell: echo hello
     - name: initial setup
       include: tasks/init.yml
 #    - name: setup dashing
