@@ -1,9 +1,19 @@
 ---
-#XXX do this only once:
-#- shell: raspi-config --expand-rootfs
-#edit /boot/config.txt for overclocking and stuff
-#
-- apt: update_cache=yes
+
+- shell: raspi-config --expand-rootfs; touch /home/pi/.fs_is_expanded
+  args:
+    creates: /home/pi/.fs_is_expanded
+
+- lineinfile: dest=/boot/config.txt line={{ item }} state=present
+  with_items:
+    - "disable_overscan = 1"
+    - "arm_freq = 1000"
+    - "core_freq = 500"
+    - "sdram_freq = 600"
+    - "over_voltage = 6"
+    - "initial_turbo = 0"
+
+- apt: update_cache=yes cache_valid_time=86400
 - apt: upgrade=dist
 - apt: upgrade=full
 
