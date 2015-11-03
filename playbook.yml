@@ -5,7 +5,7 @@
   tasks:
     - shell: echo hello
     - name: initial setup
-     include: tasks/init.yml
+      include: tasks/init.yml
 #    - name: setup dashing
 #      include: tasks/dashing.yml
     - shell: sleep 3 && reboot

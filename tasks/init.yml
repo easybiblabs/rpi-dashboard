@@ -8,3 +8,11 @@
 
 - apt: name=iceweasel state=latest
 - apt: name=x11vnc state=latest
+
+- copy: src=stuff/xinitrc dest=/home/pi/.xinitrc owner=pi
+- lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
+              state=present insertbefore="exit"
+
+## TODO:
+# https://addons.mozilla.org/en-us/firefox/addon/r-kiosk/
+# or use chrome
