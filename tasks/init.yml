@@ -2,17 +2,17 @@
 #XXX do this only once:
 #- shell: raspi-config --expand-rootfs
 #edit /boot/config.txt for overclocking and stuff
+#
 - apt: update_cache=yes
 - apt: upgrade=dist
 - apt: upgrade=full
 
-- apt: name=iceweasel state=latest
-- apt: name=x11vnc state=latest
+- apt: name={{ item }} state=latest
+  with_items:
+    - x11vnc
+    - midori
+    - matchbox-window-manager
 
 - copy: src=stuff/xinitrc dest=/home/pi/.xinitrc owner=pi
 - lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
               state=present insertbefore="exit"
-
-## TODO:
-# https://addons.mozilla.org/en-us/firefox/addon/r-kiosk/
-# or use chrome

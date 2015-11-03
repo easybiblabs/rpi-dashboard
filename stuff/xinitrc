@@ -1,5 +1,6 @@
 xset s off
 xset -dpms
 xset s noblank
-x11vnc -display :0 &
-iceweasel
+x11vnc -display :0 -forever -shared &
+matchbox-window-manager &
+midori -e Fullscreen -a https://www.iescholar.com
