@@ -1,0 +1,2 @@
+[rpi]
+192.168.88.227 ansible_ssh_pass=raspberry
