@@ -1,5 +1,5 @@
 xset s off
 xset -dpms
 xset s noblank
-x11vnc -display :0
+x11vnc -display :0 &
 iceweasel
