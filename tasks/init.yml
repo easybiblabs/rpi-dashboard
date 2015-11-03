@@ -1,0 +1,10 @@
+---
+#XXX do this only once:
+#- shell: raspi-config --expand-rootfs
+#edit /boot/config.txt for overclocking and stuff
+- apt: update_cache=yes
+- apt: upgrade=dist
+- apt: upgrade=full
+
+- apt: name=iceweasel state=latest
+- apt: name=x11vnc state=latest
