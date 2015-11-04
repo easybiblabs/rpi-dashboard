@@ -10,11 +10,12 @@
     - rubygems
     - git
 
-- gem: name={{item}} state=present
+- gem: name={{item}} state=present user_install=no
   sudo: yes
   with_items:
     - bundler
     - dashing
+    - json
 
 ### generate or git clone
 
