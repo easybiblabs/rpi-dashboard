@@ -2,31 +2,33 @@
 
 ### install requirements
 
-- apt: name={{ item }} state=present
+- apt: name={{item}} state=present
+  sudo: yes
   with_items:
     - node
     - ruby
     - rubygems
     - git
 
-- gem: name={{ item }} state=present
+- gem: name={{item}} state=present
+  sudo: yes
   with_items:
     - bundler
     - dashing
 
 ### generate or git clone
 
-- git: repo={{ dashing_git_repo }}
+- git: repo="{{dashing_git_repo}}"
        dest=/home/pi/dashboard
        update=yes
        accept_hostkey=yes
-  when: dashing_git_repo
+  when: dashing_git_repo is defined
 
 - shell: dashing new dashboard
   args:
     chdir: /home/pi
     creates: /home/pi/dashboard
-  when: not dashing_git_repo
+  when: dashing_git_repo is undefined
 
 ### start
 

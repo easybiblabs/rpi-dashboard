@@ -4,7 +4,7 @@
   args:
     creates: /home/pi/.fs_is_expanded
 
-- lineinfile: dest=/boot/config.txt line={{ item }} state=present
+- lineinfile: dest=/boot/config.txt line="{{item}}" state=present
   with_items:
     - "disable_overscan = 1"
     - "arm_freq = 1000"
@@ -17,7 +17,7 @@
 - apt: upgrade=dist
 - apt: upgrade=full
 
-- apt: name={{ item }} state=latest
+- apt: name={{item}} state=latest
   with_items:
     - x11vnc
     - midori
