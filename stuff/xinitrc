@@ -2,6 +2,7 @@ xset s off
 xset -dpms
 xset s noblank
 cd /home/pi/dashboard && dashing start &
+sleep 100 # time for dashing to start
 x11vnc -display :0 -forever -shared &
 matchbox-window-manager &
 midori -e Fullscreen -a http://localhost:3030
