@@ -37,14 +37,8 @@
     creates: /home/pi/dashboard
   when: dashing_git_repo is undefined
 
-### start
+### install more stuff
 
 - shell: bundle
-  args:
-    chdir: /home/pi/dashboard
-
-- shell: dashing start
-  async: 1
-  poll: 0
   args:
     chdir: /home/pi/dashboard
