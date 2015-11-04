@@ -9,34 +9,35 @@
 
 ## Initial Setup
 
+You need to do this only once:
+
 * download + copy raspbian to the SD card
   * https://www.raspberrypi.org/downloads/raspbian/
   * https://www.raspberrypi.org/documentation/installation/installing-images/
 * connect the RPi to ethernet and a screen, boot it up, it'll print its IP address
-* if you need WiFi, GOSUB **Setup WiFi**
+* if you need WiFi, `GOSUB` **Setup WiFi**
 * **important** edit the `hosts` file (in this repo) and put in the RPi's IP address
 * install `ansible` on *your* machine
   * `sudo apt-get install ansible`
   * `brew install ansible`
+
+## Provisioning and Applying Updates
+
+* get a coffee, open [this](https://youtu.be/dZ2DyQv-l78?list=PL3Pc3O3kb9q9UVknoSUoqG2sJ_jN3F6yb)
 * run `make`
 
-## Updates
+---
 
-* run `make`
+#### Setup WiFi
 
-## Setup WiFi
+The easiest way to get wifi to work, is to connect a keyboard and screen to the
+RPi, log in, and run `startx` (or, should that not work, `sudo raspi-config`
+and select "boot to desktop").
 
-* with the RPi on ethernet, do `ssh pi@RPI_IP_ADDRESS` (pw `raspberry`)
-* `sudo vi /etc/network/interfaces`:
-```
-auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet dhcp
-        wpa-ssid "YOUR_WIFI_SSID"
-        wpa-psk "YOUR_WIFI_PASSWORD"
+Once in LXDE, you can join a network via the networking applet in the panel.
+This will persist reboots and also still work if you don't start LXDE again.
 
-iface default inet dhcp
-```
-* remove ethernet cable and `sudo reboot`
-* let it boot up and print its IP address, use that one
-* RET
+**Important**: If you changed that, run `sudo raspi-config` again afterwards
+and set it back to "boot to console".
+
+`RET`

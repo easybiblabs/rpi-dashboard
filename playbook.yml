@@ -1,12 +1,13 @@
 ---
+
 - hosts: all
   remote_user: pi
   sudo: yes
   tasks:
     - name: initial setup
       include: tasks/init.yml
-#    - name: setup dashing
-#      include: tasks/dashing.yml
+    - name: setup dashing
+      include: tasks/dashing.yml
     - shell: sleep 3 && reboot
       async: 1
       poll: 0
