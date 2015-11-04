@@ -1,6 +1,7 @@
 xset s off
 xset -dpms
 xset s noblank
+cd /home/pi/dashboard && dashing start &
 x11vnc -display :0 -forever -shared &
 matchbox-window-manager &
 midori -e Fullscreen -a http://localhost:3030
