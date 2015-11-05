@@ -27,7 +27,9 @@ You need to do this only once:
   * `sudo apt-get install ansible`
   * `brew install ansible`
 
-## Provisioning and Applying Updates
+## Provisioning
+
+You probably also only need to do this once.
 
 If you have a Dashing repo you want to have deployed:
 
@@ -37,9 +39,12 @@ If not (yet):
 
 * `make`
   * (will use the default dashing example dashboard)
-  * if you want to switch to a custom one later - `rm -rf /home/pi/dashboard` on the RPi first
 
 [This will take a while](https://youtu.be/dZ2DyQv-l78?list=PL3Pc3O3kb9q9UVknoSUoqG2sJ_jN3F6yb).
+
+## Updating the Dashboard
+
+It does a `get pull` on boot, so power-cycling the RPi should be enough.
 
 ## Copying
 
