@@ -4,22 +4,7 @@
   args:
     creates: /home/pi/.fs_is_expanded
 
-- lineinfile: dest=/boot/config.txt line="{{item}}" state=present
-  with_items:
-    - "disable_overscan = 0"
-    - "overscan_left = -48"
-    - "overscan_right = -48"
-    - "overscan_top = -48"
-    - "overscan_bottom = -48"
-    - "framebuffer_width = 1920"
-    - "framebuffer_height = 1080"
-    - "hdmi_group = 2"
-    - "hdmi_mode = 82"
-    - "arm_freq = 1000"
-    - "core_freq = 500"
-    - "sdram_freq = 600"
-    - "over_voltage = 6"
-    - "initial_turbo = 0"
+- copy: src=stuff/config.txt dest=/boot/config.txt
 
 - apt: update_cache=yes cache_valid_time=86400
 - apt: upgrade=dist
@@ -30,6 +15,9 @@
     - x11vnc
     - midori
     - matchbox-window-manager
+    - rpi-update
+
+- shell: rpi-update
 
 - copy: src=stuff/xinitrc dest=/home/pi/.xinitrc owner=pi
 - lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
