@@ -7,6 +7,11 @@
 - lineinfile: dest=/boot/config.txt line="{{item}}" state=present
   with_items:
     - "disable_overscan = 1"
+    - "overscan_scale = 1"
+    - "overscan_left = -48"
+    - "overscan_right = -48"
+    - "overscan_top = -48"
+    - "overscan_bottom = -48"
     - "hdmi_group = 2"
     - "hdmi_mode = 82"
     - "arm_freq = 1000"
