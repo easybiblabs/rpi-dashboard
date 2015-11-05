@@ -25,6 +25,8 @@
 
 ### generate or git clone
 
+- shell: rm -rf /home/pi/dashboard
+
 - git: repo="{{dashing_git_repo}}"
        dest=/home/pi/dashboard
        update=yes
