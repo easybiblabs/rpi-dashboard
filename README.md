@@ -11,7 +11,9 @@ your own monitor if you want (FIXME: that doesn't make sense).
 * a Raspberry Pi (model not important)
 * a microSD card
 * (optional) WiFi adapter (EDIMAX EW-7811UN seems to work well enough)
-* a screen
+* a 1080p (1920x1080) computer monitor, connected via HDMI
+  * you can also use something else - but then you have to edit
+    tasks/init.yml and [change the `hdmi_mode` and `hdmi_group` settings](https://www.raspberrypi.org/documentation/configuration/config-txt.md)
 
 ## Initial Setup
 
