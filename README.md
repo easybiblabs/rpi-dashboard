@@ -44,7 +44,7 @@ If not (yet):
 
 ## Updating the Dashboard
 
-It does a `get pull` on reboot, so power-cycling the RPi should be enough.
+It does a `get pull` on boot, so power-cycling the RPi should be enough.
 
 ## Copying
 
