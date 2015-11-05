@@ -11,6 +11,8 @@
     - "overscan_right = -48"
     - "overscan_top = -48"
     - "overscan_bottom = -48"
+    - "framebuffer_width = 1920"
+    - "framebuffer_height = 1080"
     - "hdmi_group = 2"
     - "hdmi_mode = 82"
     - "arm_freq = 1000"
