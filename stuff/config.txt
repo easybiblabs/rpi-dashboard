@@ -1,0 +1,7 @@
+disable_overscan=1
+
+arm_freq=1000
+core_freq=500
+sdram_freq=600
+over_voltage=6
+initial_turbo=1
