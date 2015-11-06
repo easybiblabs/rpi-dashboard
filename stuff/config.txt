@@ -1,8 +1,4 @@
 disable_overscan=1
-hdmi_group=2
-hdmi_mode=82
-framebuffer_width=1920
-framebuffer_height=1080
 
 arm_freq=1000
 core_freq=500
