@@ -24,7 +24,7 @@ You need to do this only once:
 * if you need WiFi, `GOSUB` **Setup WiFi**
 * **important** edit the `hosts` file (in this repo) and put in the RPi's IP address
 * install `ansible` on *your* machine
-  * `sudo apt-get install ansible`
+  * `sudo apt-get install ansible sshpass`
   * `brew install ansible`
 
 ## Provisioning
