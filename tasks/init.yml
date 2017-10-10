@@ -19,6 +19,10 @@
 
 - shell: rpi-update
 
-- copy: src=stuff/xinitrc dest=/home/pi/.xinitrc owner=pi
+- name: copy xinitrc
+  template: stuff/xinitrc
+  dest: /home/pi/.xinitrc
+  owner: pi
+
 - lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
               state=present insertbefore="exit"
