@@ -24,5 +24,5 @@
     dest: /etc/X11/xinit/xinitrc
     owner: root
 
-- lineinfile: dest=/etc/rc.local line="startx"
+- lineinfile: dest=/etc/rc.local line="startx -- -nocursor"
               state=present insertbefore="exit"
