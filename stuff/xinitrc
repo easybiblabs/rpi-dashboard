@@ -3,4 +3,4 @@ xset -dpms
 xset s noblank
 x11vnc -display :0 -forever -shared &
 matchbox-window-manager &
-midori -e Fullscreen -a '{{ dashboard_url }}'
+chromium-browser --no-sandbox --noerrdialogs --start-fullscreen --start-maximized --disable-notifications --disable-infobars --kiosk --incognito '{{ dashboard_url }}' -- -nocursor

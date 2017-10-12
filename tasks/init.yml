@@ -13,7 +13,7 @@
 - apt: name={{item}} state=latest
   with_items:
     - x11vnc
-    - midori
+    - chromium-browser
     - matchbox-window-manager
     - rpi-update
 
