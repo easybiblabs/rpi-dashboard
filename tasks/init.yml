@@ -21,8 +21,8 @@
 
 - template:
     src: stuff/xinitrc
-    dest: /home/pi/.xinitrc
-    owner: pi
+    dest: /etc/X11/xinit/xinitrc
+    owner: root
 
-- lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
+- lineinfile: dest=/etc/rc.local line="startx"
               state=present insertbefore="exit"
