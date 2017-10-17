@@ -13,12 +13,16 @@
 - apt: name={{item}} state=latest
   with_items:
     - x11vnc
-    - midori
+    - chromium-browser
     - matchbox-window-manager
     - rpi-update
 
 - shell: rpi-update
 
-- copy: src=stuff/xinitrc dest=/home/pi/.xinitrc owner=pi
-- lineinfile: dest=/etc/rc.local line="su -l pi -c startx"
+- template:
+    src: stuff/xinitrc
+    dest: /etc/X11/xinit/xinitrc
+    owner: root
+
+- lineinfile: dest=/etc/rc.local line="startx -- -nocursor"
               state=present insertbefore="exit"

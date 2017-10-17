@@ -6,9 +6,6 @@
     - name: initial setup
       include: tasks/init.yml
       sudo: yes
-    - name: setup dashing
-      include: tasks/dashing.yml
-      sudo: no
     - shell: sleep 3 && reboot
       sudo: yes
       async: 1

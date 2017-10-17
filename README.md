@@ -1,7 +1,11 @@
 # Imagine Easy Monitoring Dashboard
 
-This is an ansible playbook that sets up a
-[Dashing](https://github.com/Shopify/dashing) Dashboard on a Raspberry Pi.
+This is an ansible playbook that sets up a Raspberry PI with a full-screen
+browser pointing to a configurable URL.
+
+(Version 0.0.1 used to set up a [Dashing](https://github.com/Shopify/dashing)
+Dashboard, and run that directly on the PI. But the current master doesn't do
+that anymore).
 
 It also sets up a VNC server on the RPi, so you can view the dashboard on
 your own monitor if you want (FIXME: that doesn't make sense).
@@ -31,20 +35,9 @@ You need to do this only once:
 
 You probably also only need to do this once.
 
-If you have a Dashing repo you want to have deployed:
-
-* `make DASHING_GIT_REPO=git@github.com:YOUR/REPO.git`
-
-If not (yet):
-
-* `make`
-  * (will use the default dashing example dashboard)
+* `make 'URL=http://example.com/your-dashboard-url'`
 
 [This will take a while](https://youtu.be/dZ2DyQv-l78?list=PL3Pc3O3kb9q9UVknoSUoqG2sJ_jN3F6yb).
-
-## Updating the Dashboard
-
-It does a `get pull` on boot, so power-cycling the RPi should be enough.
 
 ---
 
